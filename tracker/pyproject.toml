@@ -1,0 +1,52 @@
+[tool.poetry]
+name = "reghub-api"
+version = "1.0.0"
+description = ""
+authors = ["Ferenc Radius <ferenz1@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+uvicorn = "0.23.2"
+python = "^3.11"
+fastapi = "0.103.2"
+orjson = "3.9.7"
+pydantic_settings = "2.0.3"
+
+[tool.poetry.group.dev.dependencies]
+black = "23.9.1"
+ruff = "0.0.292"
+flake8-bugbear = "23.9.16"
+isort = "5.12.0"
+mypy = "1.5.1"
+
+[tool.ruff]
+# Enable the pycodestyle (`E`) and Pyflakes (`F`) rules by default.
+# Unlike Flake8, Ruff doesn't enable pycodestyle warnings (`W`) or
+# McCabe complexity (`C901`) by default.
+# see for a list of rules https://docs.astral.sh/ruff/rules/
+select = [
+    "E", # pycodestyle errors
+    "W", # pycodestyle warnings
+    "F", # pyflakes
+    "I", # isort
+    "C", # flake8-comprehensions
+    "B", # flake8-bugbear
+]
+
+# Same as black
+line-length = 120
+
+# Allow fix for all enabled rules (when `--fix`) is provided.
+fixable = ["ALL"]
+
+exclude = [".git", ".vscode"]
+
+[tool.black]
+line-length = 120
+target-version = ['py311']
+
+[tool.isort]
+profile = "black"
+
+[tool.mypy]
+strict = true

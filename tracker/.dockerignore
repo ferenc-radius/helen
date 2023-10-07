@@ -1,0 +1,10 @@
+.git
+.idea
+.vscode
+.lh
+.ruff_cache
+.gitignore
+azure-pipelines-v2.yaml
+.env*
+Dockerfile
+README.md
