@@ -1,6 +1,6 @@
 [tool.poetry]
-name = "reghub-api"
-version = "1.0.0"
+name = "helen"
+version = "0.1.0"
 description = ""
 authors = ["Ferenc Radius <ferenz1@gmail.com>"]
 readme = "README.md"
