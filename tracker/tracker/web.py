@@ -3,7 +3,7 @@ from typing import Annotated
 from fastapi import Depends, FastAPI
 from fastapi.responses import ORJSONResponse
 
-from tracker import model
+from tracker import prune
 from tracker.routers import nodes, status
 from tracker.settings import Settings, get_settings
 
@@ -17,7 +17,7 @@ app = FastAPI(
 )
 
 
-app.on_event("startup")(model.register_node_pruner)
+app.on_event("startup")(prune.register_node_pruner)
 
 
 app.include_router(nodes.router, prefix="/nodes", tags=["nodes"])
